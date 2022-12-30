@@ -1,0 +1,81 @@
+$cmngreen: #76c38f;
+$mvbg: #7c5959;
+$secbg: #b27f7f;
+$gray: #979797;
+$lightgray: #666666;
+$dark: #333333;
+$darkbg: #3d3d3d;
+$footerbg-1: #444444;
+$footerbg-2: #2b2b2b;
+$linecolor: #404040;
+$inputbg: #222222;
+$holder: #989898;
+$black: #000000;
+$white: #ffffff;
+$darkblack: #303030;
+
+@font-face {
+  font-family: 'Georgia';
+  src: url("../font/Georgia.ttf");
+}
+
+@mixin fontGeorgia {
+  font-family: 'Georgia', 'serif';
+}
+
+@mixin blackline {
+  position: relative;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    border-top: 3px solid $black;
+    @include mq(ipad){
+      border-width: 0.293vw;
+    }
+    @include mq(sp){
+      border-width: 0.391vw;
+    }
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+
+  span {
+    font-size: 32px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    color: $white;
+    background-color: $black;
+    padding: 5px 15px;
+    border-radius: 10px;
+    @include mq(ipad){      
+      font-size: 3.125vw;
+      padding: 0.488vw 1.465vw;
+      border-radius: 0.977vw;
+    }
+    @include mq(sp){
+      font-size: 6.519vw;
+      padding: 1.304vw 3.259vw;
+      border-radius: 1.304vw;
+    }
+  }
+
+}
+
+$breakpoint:('pc': 'screen and (min-width: 1024.9px)',
+  'sp': 'screen and (max-width: 767.9px)',
+  'ipad': 'screen and (min-width: 768px) and (max-width: 1024px)'
+);
+
+@mixin mq($bp: pc) {
+  @media #{map-get($breakpoint , $bp)} {
+    @content;
+  }
+}

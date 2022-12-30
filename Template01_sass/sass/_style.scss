@@ -1,0 +1,882 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+body {
+  max-width: 1920px;
+  margin: 0 auto;
+  line-height: 1;
+  font-size: 16px;
+  @include fontGeorgia;
+
+  @include mq(ipad) {
+    font-size: 1.563vw;
+  }
+
+  @include mq(sp) {
+    font-size: 2.086vw;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  transition: all 0.3s ease;
+}
+
+.l-inner {
+  max-width: 960px;
+
+  @include mq(ipad) {
+    max-width: 100%;
+    padding: 0 7vw;
+  }
+
+  @include mq(sp) {
+    max-width: 100%;
+    padding: 0 7vw;
+  }
+
+  margin: 0 auto;
+}
+
+.mv-sec {
+  border-top: 5px solid $cmngreen;
+  background-color: $mvbg;
+  padding: 40px 0 48px;
+
+  @include mq(ipad) {
+    border-width: 0.488vw;
+    padding: 3.906vw 0 4.688vw;
+  }
+
+  @include mq(sp) {
+    border-width: 0.652vw;
+    padding: 5.215vw 0 6.258vw;
+  }
+
+  .logo {
+    font-size: 28px;
+    float: left;
+
+    @include mq(ipad) {
+      font-size: 2.734vw;
+    }
+
+    @include mq(sp) {
+      font-size: 5.867vw;
+    }
+
+    a {
+      display: inline-block;
+      color: $white;
+
+      span {
+        display: block;
+        font-size: 11px;
+        color: $gray;
+
+        @include mq(ipad) {
+          font-size: 1.074vw;
+        }
+
+        @include mq(sp) {
+          font-size: 2.608vw;
+        }
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+
+  .menu-toggle {
+    display: none;
+
+    @include mq(sp) {
+      display: block;
+    }
+
+    float: right;
+    position: relative;
+    width: 3.911vw;
+    height: 3.911vw;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 0.391vw;
+      background-color: $black;
+      display: inline-block;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &::before {
+        top: -1.565vw;
+      }
+
+      &::after {
+        top: 1.565vw;
+      }
+    }
+
+    &.active {
+      span {
+        background-color: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+    }
+  }
+
+  .nav {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: $white;
+    float: right;
+    padding-top: 5px;
+    display: block;
+
+    @include mq(ipad) {
+      font-size: 1.27vw;
+      font-size: 0.488vw;
+    }
+
+    @include mq(sp) {
+      display: none;
+      font-size: 1.695vw;
+      padding-top: 3.911vw;
+      position: fixed;
+      text-align: center;
+      background-color: $black;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 15.645vw;
+      margin: 0 auto;
+      height: 100vh;
+      z-index: 5;
+    }
+
+    li {
+      float: left;
+
+      @include mq(sp) {
+        float: none;
+        margin-bottom: 1.304vw;
+      }
+
+      &:not(:first-child) {
+        margin-left: 5px;
+
+        @include mq(ipad) {
+          margin-left: 0.488vw;
+        }
+
+        @include mq(sp) {
+          margin-left: 0;
+        }
+      }
+
+      a {
+        padding: 10px 18px;
+        display: inline-block;
+        font-size: 13px;
+        color: $white;
+
+        @include mq(ipad) {
+          padding: 0.977vw 1.758vw;
+          font-size: 1.27vw;
+        }
+
+        @include mq(sp) {
+          padding: 1.304vw 2.347vw;
+          display: block;
+          font-size: 2.347vw;
+        }
+
+        &:hover,
+        &.active {
+          background-color: $cmngreen;
+          border-radius: 5px;
+
+          @include mq(ipad) {
+            border-radius: 0.488vw;
+          }
+
+          @include mq(sp) {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .mv-content {
+    position: relative;
+    padding: 38px 60px 0;
+
+    @include mq(ipad) {
+      padding: 3.711vw 5.859vw 0;
+    }
+
+    @include mq(sp) {
+      padding: 4.954vw 7.823vw 0;
+    }
+
+    .mv-info {
+      float: left;
+      padding-top: 95px;
+      width: 39%;
+
+      @include mq(ipad) {
+        padding-top: 9.277vw;
+      }
+
+      @include mq(sp) {
+        width: 100%;
+        padding-top: 0;
+      }
+
+      .mv-ttl {
+        font-size: 46px;
+        line-height: 1;
+        color: $white;
+
+        @include mq(ipad) {
+          font-size: 4.492vw;
+        }
+
+        @include mq(sp) {
+          font-size: 7.171vw;
+        }
+      }
+
+      .mv-txt {
+        font-size: 12px;
+        line-height: 1.5;
+        color: $gray;
+        padding: 23px 0 20px;
+        letter-spacing: 0.5px;
+
+        @include mq(ipad) {
+          font-size: 1.172vw;
+          padding: 2.246vw 0 1.953vw;
+          letter-spacing: 0.049vw;
+        }
+
+        @include mq(sp) {
+          font-size: 2.608vw;
+          padding: 2.999vw 0 2.608vw;
+          letter-spacing: 0.065vw;
+        }
+      }
+
+      .read-btn {
+        display: inline-block;
+        font-size: 13px;
+        color: $white;
+        line-height: 1.2;
+        padding: 10px 18px;
+        border-radius: 10px;
+        background-color: $cmngreen;
+
+        @include mq(ipad) {
+          font-size: 1.27vw;
+          padding: 0.977vw 1.758vw;
+          border-radius: 0.977vw;
+        }
+
+        @include mq(sp) {
+          font-size: 2.608vw;
+          padding: 1.304vw 2.347vw;
+          border-radius: 1.304vw;
+        }
+
+        &:hover {
+          background-color: $white;
+          color: $cmngreen;
+        }
+      }
+    }
+
+    .mv-img {
+      float: right;
+      width: 51%;
+
+      @include mq(sp) {
+        margin-top: 1.304vw;
+        width: 100%;
+      }
+    }
+
+    .btn-left,
+    .btn-right {
+      position: absolute;
+      top: 54%;
+      transform: translateY(-50%);
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+      width: 15px;
+
+      @include mq(ipad) {
+        width: 1.465vw;
+      }
+
+      @include mq(sp) {
+        width: 3.259vw;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    .btn-left {
+      left: 0;
+    }
+
+    .btn-right {
+      right: 0;
+    }
+  }
+}
+
+.content-sec {
+  background-color: $secbg;
+  padding: 68px 0 82px;
+
+  @include mq(ipad) {
+    padding: 6.641vw 0 8.008vw;
+  }
+
+  @include mq(sp) {
+    padding: 8.866vw 0;
+  }
+
+  .content-ttl {
+    @include blackline;
+  }
+
+  .service-list {
+    padding: 48px 0 70px;
+
+    @include mq(ipad) {
+      padding: 4.688vw 0 6.836vw;
+    }
+
+    @include mq(sp) {
+      padding: 6.258vw 0;
+    }
+
+    .service {
+      float: left;
+      text-align: center;
+      padding: 20px 30px;
+      background-color: $white;
+      width: 23.5%;
+      cursor: pointer;
+
+      @include mq(ipad) {
+        padding: 1.953vw 2.93vw;
+      }
+
+      @include mq(sp) {
+        float: none;
+        width: 45%;
+        padding: 3.911vw 5.215vw;
+        margin: 0 auto 2.608vw;
+      }
+
+      &:hover {
+        background-color: $cmngreen;
+
+        .service-ttl,
+        p {
+          color: $white;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 2%;
+
+        @include mq(sp) {
+          margin-right: auto;
+        }
+      }
+
+      .service-ttl {
+        text-transform: uppercase;
+        font-size: 32px;
+        color: $dark;
+        padding: 10px 0 17px;
+
+        @include mq(ipad) {
+          font-size: 3.125vw;
+          padding: 0.977vw 0 1.66vw;
+        }
+
+        @include mq(sp) {
+          font-size: 5.867vw;
+          padding: 1.304vw 0 2.216vw;
+        }
+      }
+
+      p {
+        font-size: 12px;
+        color: $gray;
+        line-height: 1.5;
+        letter-spacing: 0.3px;
+
+        @include mq(ipad) {
+          font-size: 1.172vw;
+          letter-spacing: 0.029vw;
+        }
+
+        @include mq(sp) {
+          font-size: 2.347vw;
+          letter-spacing: 0.039vw;
+        }
+      }
+
+      img {
+        @include mq(sp){
+          width: 100%;
+        }        
+      }
+    }
+  }
+
+  .work-list {
+    padding-top: 48px;
+
+    @include mq(ipad) {
+      padding-top: 4.688vw;
+    }
+
+    @include mq(sp) {
+      padding-top: 6.258vw;
+    }
+
+    .work {
+      float: left;
+      width: 31.3%;
+      text-align: center;
+      background-color: $white;
+      padding: 5px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      @include mq(ipad) {
+        padding: 0.488vw;
+        margin-bottom: 1.953vw;
+      }
+
+      @include mq(sp) {
+        width: 48%;
+        margin-right: 4%;
+        padding: 0.652vw;
+        margin-bottom: 2.608vw;
+      }
+
+      &:not(:nth-child(3n)) {
+        margin-right: 3%;
+
+        @include mq(sp) {
+          margin-right: 4%;
+        }
+      }
+
+      &:nth-child(2n) {
+        @include mq(sp) {
+          margin-right: 0;
+        }
+      }
+
+      &:hover {
+        background-color: $cmngreen;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        font-size: 14px;
+        color: $white;
+        background-color: $darkbg;
+        padding: 8px;
+        margin-top: -31px;
+
+        @include mq(ipad) {
+          font-size: 1.367vw;
+          padding: 0.781vw;
+          margin-top: -3.027vw;
+        }
+
+        @include mq(sp) {
+          font-size: 1.825vw;
+          padding: 1.043vw;
+          margin-top: -4.042vw;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  .info-list {
+    background-color: $footerbg-1;
+    padding: 40px 0 32px;
+
+    @include mq(ipad) {
+      padding: 3.906vw 0 3.125vw;
+    }
+
+    @include mq(sp) {
+      padding: 5.215vw 0 4.172vw;
+    }
+
+    .info {
+      width: 227px;
+      float: left;
+
+      @include mq(ipad) {
+        width: 48%;
+      }
+
+      @include mq(sp) {
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-right: 17px;
+
+        @include mq(ipad) {
+          margin-right: 4%;
+          margin-bottom: 1.953vw;
+        }
+
+        @include mq(sp) {
+          margin-right: 0;
+          margin-bottom: 3.911vw;
+        }
+      }
+
+      &:nth-child(2n) {
+        @include mq(ipad) {
+          margin-right: 0;
+        }
+      }
+
+      a {
+        color: $cmngreen;
+      }
+
+      .info-ttl {
+        font-size: 16px;
+        color: $white;
+        line-height: 1.2;
+        padding-bottom: 28px;
+
+        @include mq(ipad) {
+          font-size: 1.563vw;
+          padding-bottom: 2.734vw;
+        }
+
+        @include mq(sp) {
+          font-size: 2.868vw;
+          padding-bottom: 3.651vw;
+        }
+      }
+
+      .post-ttl {
+        a {
+          font-size: 16px;
+
+          @include mq(ipad) {
+            font-size: 1.563vw;
+          }
+
+          @include mq(sp) {
+            font-size: 2.347vw;
+          }
+        }
+      }
+
+      .blog-info {
+        font-size: 10px;
+        padding-top: 13px;
+        line-height: 1;
+
+        @include mq(ipad) {
+          font-size: 0.977vw;
+          padding-top: 1.27vw;
+        }
+
+        @include mq(sp) {
+          font-size: 1.565vw;
+          padding-top: 1.695vw;
+        }
+
+        span {
+          display: block;
+        }
+
+        .mail {
+          color: $lightgray;
+          padding-bottom: 13px;
+
+          @include mq(ipad) {
+            padding-bottom: 1.27vw;
+          }
+
+          @include mq(sp) {
+            padding-bottom: 1.695vw;
+          }
+        }
+
+        .date {
+          padding-bottom: 11px;
+          letter-spacing: 0.5px;
+
+          @include mq(ipad) {
+            padding-bottom: 1.074vw;
+            letter-spacing: 0.049vw;
+          }
+
+          @include mq(sp) {
+            padding-bottom: 1.434vw;
+            letter-spacing: 0.065vw;
+          }
+        }
+      }
+
+      p {
+        line-height: 1.6;
+        color: $gray;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+
+        @include mq(ipad) {
+          font-size: 1.27vw;
+          letter-spacing: 0.049vw;
+        }
+
+        @include mq(sp) {
+          font-size: 2.086vw;
+          letter-spacing: 0.065vw;
+        }
+      }
+
+      .read-link {
+        color: $cmngreen;
+        display: inline-block;
+        font-size: 13px;
+        margin-top: 12px;
+
+        @include mq(ipad) {
+          font-size: 1.27vw;
+          margin-top: 1.172vw;
+        }
+
+        @include mq(sp) {
+          font-size: 1.695vw;
+          margin-top: 1.565vw;
+        }
+      }
+
+      .link-list {
+        li {
+          padding-bottom: 10px;
+          margin-bottom: 8px;
+          border-bottom: 1px solid $linecolor;
+
+          @include mq(ipad) {
+            padding-bottom: 0.977vw;
+            margin-bottom: 0.781vw;
+          }
+
+          @include mq(sp) {
+            padding-bottom: 1.304vw;
+            margin-bottom: 1.043vw;
+          }
+
+          a {
+            padding-left: 8px;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            position: relative;
+            color: $cmngreen;
+
+            @include mq(ipad) {
+              padding-left: 0.781vw;
+              font-size: 1.27vw;
+              letter-spacing: 0.049vw;
+            }
+
+            @include mq(sp) {
+              padding-left: 1.043vw;
+              font-size: 2.086vw;
+              letter-spacing: 0.065vw;
+            }
+
+            &::before {
+              content: '»';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+      }
+
+      .tweet-txt {
+        padding-bottom: 23px;
+
+        @include mq(ipad) {
+          padding-bottom: 2.246vw;
+        }
+
+        @include mq(sp) {
+          padding-bottom: 2.999vw;
+        }
+      }
+
+      form {
+        &::placeholder {
+          color: $holder;
+        }
+
+        .form-input {
+          outline: none;
+          border: none;
+          background-color: $inputbg;
+          width: 100%;
+          border-radius: 10px;
+          padding: 10px;
+          margin-bottom: 10px;
+          color: $holder;
+          @include fontGeorgia;
+
+          @include mq(ipad) {
+            border-radius: 0.977vw;
+            padding: 0.977vw;
+            margin-bottom: 0.977vw;
+          }
+
+          @include mq(sp) {
+            border-radius: 1.304vw;
+            padding: 1.304vw;
+            margin-bottom: 1.304vw;
+            font-size: 2.086vw;
+          }
+        }
+
+        textarea {
+          @include fontGeorgia;
+          resize: none;
+        }
+
+        .submit-btn {
+          cursor: pointer;
+          border: 1px solid $cmngreen;
+          background-color: $cmngreen;
+          padding: 10px 12px;
+          text-transform: uppercase;
+          font-size: 12px;
+          border-radius: 10px;
+          letter-spacing: 0.5px;
+          @include fontGeorgia;
+          color: $darkblack;
+
+          @include mq(ipad) {
+            padding: 0.977vw 1.172vw;
+            font-size: 1.172vw;
+            border-radius: 0.977vw;
+            letter-spacing: 0.049vw;
+          }
+
+          @include mq(sp) {
+            padding: 1.304vw 1.565vw;
+            font-size: 2.086vw;
+            border-radius: 1.304vw;
+            letter-spacing: 0.065vw;
+          }
+
+          &:hover {
+            background-color: $darkblack;
+            color: $cmngreen;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid $black;
+    background-color: $footerbg-2;
+    color: $gray;
+    padding: 24px 0;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+
+    @include mq(ipad) {
+      padding: 2.344vw 0;
+      font-size: 1.27vw;
+      letter-spacing: 0.039vw;
+    }
+
+    @include mq(sp) {
+      padding: 3.129vw 0;
+      font-size: 2.086vw;
+      letter-spacing: 0.052vw;
+    }
+
+    .domain {
+      float: left;
+    }
+
+    .site-name {
+      float: right;
+    }
+  }
+}
