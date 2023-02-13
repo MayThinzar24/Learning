@@ -1,0 +1,30 @@
+/* ========================================================
+content.css
+======================================================== */
+/* content, section
+-------------------------------------------------------- */
+.inner {
+	margin: 0 auto;
+
+	@include mq(sp) {
+  	width: 100%;
+    padding: 0 2rem;
+	}
+
+	@include mq() {
+  	max-width: 100rem;
+	}
+
+}
+
+//w-880 
+.w-880{
+  margin: 0 auto;
+  @include mq(sp){
+    width: 100%;
+    padding: 0 2rem;
+  }
+  @include mq(){
+    max-width: 88rem;
+  }
+}

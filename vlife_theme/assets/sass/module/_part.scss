@@ -1,0 +1,205 @@
+/* ========================================================
+ common parts styles
+======================================================== */
+/* clearfix */
+
+.clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+/* Effect Text */
+
+.eff-txt {
+  background: linear-gradient(92.15deg, $color01 1.34%, $color02 99.99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Common Button */
+.cmn-btn {
+  transition: all 0.3s ease-in-out;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    color: $white;
+  }
+
+  &:hover {
+    .underline-txt {
+      &::after {
+        background-color: $white;
+        transform: scale(1, 1);
+      }
+    }
+
+    .btn-circle {
+      &::before {
+        left: 65%;
+      }
+    }
+  }
+
+  .btn-circle {
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 45%;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-style: solid;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      border-width: 0 0.1rem 0.1rem 0;
+      transition: all 0.3s;
+    }
+  }
+
+}
+
+.underline-txt {
+  position: relative;
+
+  &::after {
+    @include mq() {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 0.2rem;
+      left: 0;
+      bottom: -0.8rem;
+      transform: scale(0, 1);
+      transform-origin: left top;
+      transition: all 0.3s;
+    }
+  }
+}
+
+/* Menu Link */
+.menu-link {
+  @include mq() {
+    padding-bottom: 1rem;
+  }
+
+  color: $color08;
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:hover {
+    @include mq() {
+      background-image: linear-gradient(92.15deg, $color01 1.34%, $color02 99.99%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: rgba(0, 0, 0, 0);
+      background-clip: text;
+    }
+
+    &::after {
+      @include mq() {
+        background-image: linear-gradient(92.15deg, $color01 1.34%, $color02 99.99%);
+        transform: scale(1, 1);
+      }
+
+    }
+  }
+}
+
+body [data-aos-delay='7000'][data-aos].aos-animate,
+[data-aos][data-aos][data-aos-delay='7000'].aos-animate {
+  transition-delay: 7s;
+}
+
+body [data-aos-delay='7500'][data-aos].aos-animate,
+[data-aos][data-aos][data-aos-delay='7500'].aos-animate {
+  transition-delay: 9s;
+}
+
+
+/* Section ttl */
+.sec-ttl {
+  font-weight: 700;
+
+  span {
+    display: block
+  }
+
+  .eng-ttl {
+    @include m-font-redhat;
+    text-transform: uppercase;
+    line-height: 1;
+
+    @include mq() {
+      font-size: 2rem;
+      padding-bottom: 1.6rem
+    }
+
+    @include mq(sp) {
+      font-size: 1.4rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  .jp-ttl {
+    @include m-font-notocjk;
+
+    @include mq() {
+      font-size: 3.5rem;
+    }
+
+    @include mq(sp) {
+      font-size: 2.8rem;
+    }
+  }
+}
+
+/* Sec Button */
+
+.sec-btn {
+  display: inline-block;
+
+  .btn-txt {
+    color: $color08;
+    font-weight: 700;
+  }
+
+  .btn-circle {
+    background-image: linear-gradient(19.32deg, $color01 7.4%, $color02 88.15%);
+
+    @include mq() {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+
+    @include mq(sp) {
+      width: 2.3rem;
+      height: 2.3rem;
+    }
+  }
+
+}
+
+.purple-btn {
+  background-image: linear-gradient(93.02deg, $color03 3.86%, $color02 75.11%);
+}
+
+.blue-btn {
+  background-image: linear-gradient(94.34deg, $color04 6.55%, $color01 72.43%);
+}
+
+.detail{
+  max-width: 98rem;
+  margin: 0 auto;
+  padding: 3rem 0;
+  line-height: 1.5;
+}
+

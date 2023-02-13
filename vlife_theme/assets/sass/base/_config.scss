@@ -1,0 +1,373 @@
+/* ========================================================
+config - site, sass overall ettings
+======================================================== */
+/*  color
+/* -------------------------------------------------------- */
+$color01: #496CF6;
+$color02: #A12BF4;
+$color03: #C97CFF;
+$color04: #6483FF;
+$color05: #FCF43E;
+$color06: #e9e9e9;
+$color07: #F8F8F8;
+$color08: #262626;
+$color09: #C6C6C6;
+$color10: #3b3936; 
+$color11: #cc8129;
+$color12: #82807e;
+
+//btn-shadow #{$v-btn-shadow}
+$v-btn-shadow: 0 1px 0 0;
+
+/* mono */
+$black: #000;
+$black024: #181818;
+$black030: #1e1e1e;
+$black033: #212121;
+$black051: #333;
+$black054: #363636;
+$black071: #474747;
+$black085: #555;
+$black092: #565656;
+$black102: #666;
+$black112: #707070;
+$black133: #858585;
+$black139: #8b8b8b;
+$black155: #9b9b9b;
+$black153: #999;
+$black157: #959595;
+$black173: #adadad;
+$black192: #c0c0c0;
+$black204: #ccc;
+$black205: #c7c7c7;
+$black216: #d8d8d8;
+$black221: #dddddd;
+$black229: #e5e5e5;
+$black238: #eee;
+$black240: #f0f0f0;
+$black242: #f2f2f2;
+$black245: #f5f5f5;
+$black246: #f6f6f6;
+$black250: #fafafa;
+$white: #fff;
+
+
+/*  grobal settings
+/* -------------------------------------------------------- */
+// images path #{$v-img-path}
+$v-img-path: "../img/";
+// for AMP #{$v-img}
+$v-img: "img";
+// icon-font-family #{$v-icon-font-family}
+$v-icon-font-family: "feather";
+
+// header-height
+$header-height-pc: 7rem;
+$header-height-sp: 5.3rem;
+
+@font-face {
+  font-family: "Noto Sans CJK JP";
+  src: url("../font/NotoSansCJKjp-Regular.otf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url("../font/NotoSansJP-Bold.otf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("../font/RedHatDisplay-Bold.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Red Hat Display";
+  src: url("../font/RedHatDisplay-SemiBold.ttf") format("truetype");
+  font-style: normal;
+}
+
+
+/*  mixin */
+/* -------------------------------------------------------- */
+@mixin  m-font-yu{
+  font-family: "Yu Gothic Medium","Yu Gothic","Meiryo",sans-serif;
+}
+
+@mixin m-font-redhat {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+@mixin m-font-notocjk() {
+  font-family: "Noto Sans CJK JP", sans-serif;
+}
+
+@mixin m-font-noto() {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* use only for Noto Sans JP, bold style */
+@mixin m-font-bold() {
+  font-weight: 700;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// @include m-justify();
+@mixin m-justify() {
+  text-align: justify;
+  text-justify: inter-ideograph;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+// text-overflow @include m-ellipsis();
+@mixin m-ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// img-seo-txt @include m-img-txt();
+@mixin m-img-txt() {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+@mixin m-absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+
+  @if $top !=null {
+    top: $top;
+  }
+
+  @if $right !=null {
+    right: $right;
+  }
+
+  @if $bottom !=null {
+    bottom: $bottom;
+  }
+
+  @if $left !=null {
+    left: $left;
+  }
+}
+
+// pseudo - txt icon
+/*
+	.elements {
+		&:before {
+			@include m-pseudoicon-txt($content: "test");
+		}
+	}
+*/
+@mixin m-pseudoicon-txt($color: null,
+  $content: "",
+  $display: inline-block,
+  $fFamily: null,
+  $fSize: null,
+  $fWeight: null,
+  $mgRight: .4rem) {
+  @if $color !=null {
+    color: $color;
+  }
+
+  content: $content;
+  display: $display;
+
+  @if $fFamily !=null {
+    font-family: $fFamily;
+  }
+
+  @if $fSize !=null {
+    font-size: $fSize;
+  }
+
+  @if $fWeight !=null {
+    font-weight: $fWeight;
+  }
+
+  margin-right: $mgRight;
+}
+
+//  pseudo - img icon
+/*
+	.elements {
+		&:before {
+			@include m-pseudoicon-img($bg-url: "../img/icon/",);
+		}
+		&:after {
+			@include m-pseudoicon-img($display: inline-block, $position: absolute, $top: null, $right: null, $bottom: null, $left: null, $bg-color: null, $bg-url: "../img/icon/", $bg-position: 0 0, $bg-repeat: no-repeat, $bg-size: 100%, $content: "", $transform: null, $width: 20px, $height: 20px);
+		}
+	}
+*/
+@mixin m-pseudoicon-img($display: block,
+  $position: absolute,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $bg-color: null,
+  $bg-url: null,
+  $bg-position: 0 0,
+  $bg-repeat: no-repeat,
+  $bg-size: 100%,
+  $content: "",
+  $transform: null,
+  $width: 20px,
+  $height: 20px) {
+  display: $display;
+  position: $position;
+
+  @if $top !=null {
+    top: $top;
+  }
+
+  @if $right !=null {
+    right: $right;
+  }
+
+  @if $bottom !=null {
+    bottom: $bottom;
+  }
+
+  @if $left !=null {
+    left: $left;
+  }
+
+  @if $bg-color !=null {
+    background-color: $bg-color;
+  }
+
+  @if $bg-url !=null {
+    background-image: url($bg-url);
+  }
+
+  @if $bg-position !=null {
+    background-position: $bg-position;
+  }
+
+  @if $bg-repeat !=null {
+    background-repeat: $bg-repeat;
+  }
+
+  @if $bg-size !=null {
+    background-size: $bg-size;
+  }
+
+  content: $content;
+
+  @if $transform !=null {
+    transform: $transform;
+  }
+
+  width: $width;
+  height: $height;
+}
+
+// absolute centering
+/*
+	centering absolutely
+	.elements01 {
+		@include centering;
+	}
+	centring horizontal
+	.elements02 {
+		@include m-centering(true, false);
+	}
+	centering vertical
+	.elements03 {
+		@include m-centering(false, true);
+	}
+
+*/
+@mixin m-centering($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if $horizontal and $vertical {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @else if $horizontal {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @else if $vertical {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+// breakepoint settings
+/*
+example：
+  for PC
+	.foo {
+		color: blue;
+		@include mq() {
+			color: #fff;
+		}
+    for SP
+		@include mq(sp) {
+			color: #000;
+		}
+	} */
+$breakpoints: ( // general case
+  "sp": "screen and (max-width: 767.9px)",
+  "pc": "screen and (min-width: 768px)",
+
+  // if needed
+  "sp_max": "screen and (max-width: 374.9px)",
+  "sp_min": "screen and (max-width: 320px)",
+  "sp_ls": "screen and (max-width: 767px) and (orientation: landscape)",
+  "tab": "screen and (min-width: 768px) and (max-width: 1024px)",
+  "laptop": "screen and (min-width: 1025px) and (max-width: 1199px)",
+  "desktop_sp": "screen and (min-width: 1200px)",
+  "desktop_pc": "screen and (max-width: 1480px)",
+
+  // Separate at the breakpoint of the tablet, laptop device
+  "tab_sp": "screen and (max-width: 1024px)",
+  "tab_pc": "screen and (min-width: 1025px)",
+  "laptop_sp": "screen and (max-width: 1199px)",
+  "laptop_pc": "screen and (min-width: 1200px)",
+
+
+) !default;
+
+@mixin mq($breakpoint: pc) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// display-flex-settings @include m-flex();
+@mixin m-flex($justify: null, $align: center, $wrap: null, $flow: null, $direction: null) {
+  display: flex;
+
+  @if $justify !=null {
+    justify-content: $justify;
+  }
+
+  @if $align !=null {
+    align-items: $align;
+  }
+
+  @if $wrap !=null {
+    flex-wrap: $wrap;
+  }
+
+  @if $flow !=null {
+    flex-flow: $flow;
+  }
+
+  @if $direction !=null {
+    flex-direction: $direction;
+  }
+}

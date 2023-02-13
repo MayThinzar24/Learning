@@ -1,0 +1,223 @@
+/* ========================================================
+base.css
+======================================================== */
+/* reset
+-------------------------------------------------------- */
+#{$v-img},
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  border: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* root
+-------------------------------------------------------- */
+html {
+  font-size: 7.5pt; // 10px
+}
+
+body {
+  color: $color08; 
+  @include m-font-notocjk;
+  line-height: 1;
+  word-break: break-all;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+#{$v-img}{
+  pointer-events: none;
+  display: block;
+  margin: 0 auto;
+  @include mq(sp) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+#{$v-img}:not([width]):not([class]){
+  vertical-align: middle;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+#{$v-img}[src$=".svg"]:not([class]) {
+  width: 100%;
+  height: auto;
+}
+
+/* sp */
+@include mq(sp) {
+  html {
+    overflow-x: hidden;
+
+    // SafeArea  settings for iOS11.1
+    padding-top: constant(safe-area-inset-top);
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-left: constant(safe-area-inset-left);
+    padding-right: constant(safe-area-inset-right);
+
+    // SafeArea  settings for iOS11.2
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+
+  }
+
+  body {
+    font-size: 1.4em;
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    min-width: initial;
+   }
+
+  /* Safari */
+  _::-webkit-full-page-media, _:future, :root body {
+      font-size: 1.4em;
+  }
+}
+
+/* tab */
+@include mq(tab) {
+  body {
+    font-size: 1.6em;
+  }
+
+  /* Safari */
+  _::-webkit-full-page-media, _:future, :root body {
+    font-size: 1.65em;
+  }
+}
+/* laptop */
+@include mq(laptop) {
+  body {
+    font-size: 1.6em;
+  }
+}
+/* pc */
+@include mq() {
+  body {
+    font-size: 1.6em;
+    min-width: 120rem;
+    max-width: 160rem;
+    margin: 0 auto;
+  }
+}
+/* link
+-------------------------------------------------------- */
+a {
+  color: $color08;
+  text-decoration: none;
+  transition: .4s color ease-in-out, .4s background ease-in-out;
+}
+
+a:not([class]) {
+  color: inherit !important;
+  text-underline-offset: 2px;
+  text-decoration: underline;
+  transition: .4s color ease-in-out, .4s background ease-in-out;
+}
+
+a:active,
+a:focus,
+a:hover {
+  text-decoration: none;
+}

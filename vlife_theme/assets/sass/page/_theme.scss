@@ -1,0 +1,62 @@
+/* ========================================================
+ styles for page
+======================================================== */
+.page-ttl {
+  @include m-font-notocjk;
+  padding: 7rem 0 7rem;
+  font-weight: 700;
+  margin-left: calc((100% - 1200px)/2);
+
+  span {
+    line-height: 1.5;
+  }
+
+  .eng-ttl {
+    @include m-font-redhat;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+  }
+
+  .jp-ttl {
+    @include m-font-notocjk;
+    font-size: 5rem;
+    display: block;
+  }
+}
+
+.page-mv {
+  text-align: right;
+
+  img {
+    width: 100%;
+    height: 37.3rem;
+    object-fit: cover;
+    display: inline-block;
+    padding-left: calc((100% - 1200px)/2);
+  }
+}
+
+
+.t-field {
+  padding: 5rem 0 0;
+
+  h3 {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  a {
+    color: $color01;
+  }
+
+}
+.content-area{
+  max-width: 98rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.content{
+  padding-bottom: 3rem;
+}

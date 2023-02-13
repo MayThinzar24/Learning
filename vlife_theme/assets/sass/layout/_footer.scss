@@ -1,0 +1,224 @@
+/* ========================================================
+footer
+======================================================== */
+.footer {
+  @include m-font-notocjk;
+  color: $color08;
+
+  /* SNS Block */
+  .sns-blk {
+    text-align: center;
+
+    @include mq(sp) {
+      padding: 4.3rem 0;
+    }
+
+    @include mq() {
+      padding: 6.5rem 0;
+    }
+
+    .sns-ttl {
+      font-weight: 700;
+
+      @include mq(sp) {
+        font-size: 1.8rem;
+      }
+
+      @include mq() {
+        font-size: 2rem;
+      }
+
+    }
+
+    .txt {
+      line-height: 2;
+
+      @include mq(sp) {
+        font-size: 1.4rem;
+        padding: 1.3rem 0 2.6rem;
+      }
+
+      @include mq() {
+        font-size: 1.5rem;
+        padding: 1rem 0 2.2rem;
+      }
+    }
+
+    .sns-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .sns-ico {
+
+        @include mq(sp) {
+          padding: 0 9.5%;
+        }
+
+        @include mq() {
+          padding: 0 4rem;
+        }
+
+        &:not(:last-child) {
+          border-right: 0.1rem solid $color09;
+        }
+
+        a {
+          display: inline-block;
+
+          @include mq(sp) {
+            width: 3rem;
+          }
+
+          @include mq() {
+            width: 3.7rem;
+          }
+
+        }
+      }
+    }
+  }
+
+  /* Copyright Block */
+  .copyright-blk {
+    background-color: $color07;
+    text-align: center;
+
+    @include mq(sp) {
+      padding: 4.3rem 0;
+    }
+
+    @include mq() {
+      padding: 5rem 0;
+    }
+
+    .logo {
+      @include mq(sp) {
+        display: block;
+        max-width: 24rem;
+        margin: 0 auto;
+      }
+    }
+
+    .menu-list {
+      display: flex;
+      justify-content: center;
+      font-weight: 700;
+
+      @include mq(sp) {
+        flex-wrap: wrap;
+        font-size: 1.2rem;
+        padding: 3.2rem 0 1.8rem;
+      }
+
+      @include mq() {
+        font-size: 1.3rem;
+        padding: 3.2rem 0;
+      }
+
+      li {
+        @include mq(sp) {
+          padding-bottom: 1.3em;
+        }
+
+        &:not(:last-child) {
+
+          @include mq(sp) {
+            margin-right: 2.5rem;
+          }
+
+          @include mq() {
+            margin-right: 3rem;
+          }
+        }
+
+      }
+    }
+
+    .btn-list {
+      @include mq() {
+        display: flex;
+        justify-content: center;
+      }
+
+      .cmn-btn {
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        @include mq(sp) {
+          width: 100%;
+          max-width: 30.5rem;
+          padding: 1.5rem 2rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include mq() {
+          width: 25.6rem;
+          padding: 1.1rem 1.5rem;
+        }
+
+        .btn-txt {
+          font-weight: 700;
+
+          @include mq(sp) {
+            font-size: 1.4rem;
+          }
+
+          @include mq() {
+            font-size: 1.3rem;
+          }
+        }
+
+        .btn-circle {
+          border: 0.1rem solid $white;
+
+          @include mq(sp) {
+            width: 2.6rem;
+            height: 2.6rem;
+          }
+
+          @include mq() {
+            width: 2.2rem;
+            height: 2.2rem;
+          }
+
+        }
+
+        &.purple-btn {
+          @include mq(sp) {
+            margin-bottom: 1.5rem;
+          }
+
+          @include mq() {
+            margin-right: 1rem;
+          }
+
+        }
+      }
+
+    }
+
+    .copy-txt {
+      @include m-font-redhat;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include mq(sp) {
+        font-size: 1rem;
+        letter-spacing: 0.02rem;
+        padding-top: 3rem;
+        line-height: 1.7;
+      }
+
+      @include mq() {
+        font-size: 1rem;
+        letter-spacing: 0.02rem;
+        padding-top: 4.6rem;
+      }
+    }
+  }
+}

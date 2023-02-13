@@ -1,0 +1,214 @@
+/* ========================================================
+ styles for theme-editor
+======================================================== */
+
+html :where(.wp-block) {
+  max-width: 100%;
+}
+
+/* line-ttl */
+.line-ttl,
+.pg-gluten h2,
+h2.wp-block {
+  @include m-font-notocjk;
+  font-size: 3rem;
+  line-height: 1.5;
+  text-align: center;
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10rem;
+    height: 0.3rem;
+    background-image: linear-gradient(92.15deg, $color01 1.34%, $color02 99.99%);
+  }
+}
+
+/* two column */
+.block-columns-part {
+  padding: 12rem calc((100% - 120rem)/2);
+  background: url(#{$v-img-path}shared/img_crown_bg.png) no-repeat center top/72.2rem;
+
+  .block-column-txt {
+    float: left;
+    width: 46%;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    word-break: break-word;
+
+    p {
+      padding-bottom: 4rem;
+    }
+  }
+
+  .block-column-img {
+    float: right;
+    width: 48%;
+
+    img {
+      object-fit: cover;
+      filter: drop-shadow(0.6rem 0.6rem 3rem rgba(0, 0, 0, 0.12))
+    }
+  }
+}
+
+/* two-color blk */
+.bg-blk {
+  .part-ttl {
+    padding-top: 6rem;
+    color: $white;
+    line-height: 1.5;
+
+    span {
+      display: block
+    }
+
+    .eng-ttl {
+      @include m-font-redhat;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 4.7rem;
+    }
+
+    .jp-ttl {
+      @include m-font-notocjk;
+      font-size: 1.5rem;
+    }
+  }
+
+  .info-ttl {
+    position: relative;
+    top: -2rem;
+
+    span {
+      @include m-font-notocjk;
+      color: $white;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.7;
+      background-color: $color08;
+      padding: 0 1rem
+    }
+  }
+
+  .info-txt {
+    @include m-font-notocjk;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding-top: 4rem;
+  }
+
+  .gradient-bg {
+    height: 26rem;
+  }
+
+  .white-bg {
+    background-color: $white;
+    padding: 0 9rem 9.5rem;
+    margin-top: -7rem;
+  }
+
+  &.right-side {
+    margin-left: calc((100% - 120rem)/2);
+
+    .part-ttl {
+      text-align: right;
+      margin-right: calc(100% - 120rem);
+    }
+
+    .gradient-bg {
+      background-image: linear-gradient(93.07deg, $color02 25.06%, $color01 99.99%);
+    }
+
+    .white-bg {
+      margin-right: calc(100% - 120rem);
+    }
+  }
+
+  &.left-side {
+    margin-right: calc((100% - 120rem)/2);
+
+    .gradient-bg {
+      background-image: linear-gradient(93.07deg, $color01 25.06%, $color02 99.99%);
+    }
+
+    .part-ttl {
+      margin-left: calc(100% - 120rem);
+    }
+
+    .white-bg {
+      margin-left: calc(100% - 120rem);
+
+      .info-ttl {
+        text-align: right;
+      }
+    }
+  }
+
+}
+
+/* Corner Block */
+.corner-blk {
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem;
+  line-height: 1.5;
+  position: relative;
+  @include m-font-yu;
+  &::before,&::after{
+    position: absolute;
+    content: '';
+    width: 5rem;
+    height: 5rem;
+    border: solid $color10;
+  }
+  &::before{
+    top: 0;
+    left: 0;
+    border-width: 0.1rem 0 0 0.1rem;
+  }
+  &::after{
+    bottom: 0;
+    right: 0;
+    border-width: 0 0.1rem 0.1rem 0;
+  }
+  .corner-ttl{
+    font-weight: 500;
+    font-size: 2.4rem;
+    padding-bottom: 1rem;
+  }
+  .corner-txt{
+    font-size: 1.6rem;
+    &:not(:first-of-type){
+      padding-top: 2rem;
+    }
+  }
+}
+
+.border-blk{
+
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem;
+  line-height: 1.5;
+  font-size: 1.4rem;
+  border: 0.1rem solid $color12;
+  background-color: $white;
+  .border-ttl{
+    font-weight: 700;
+    color: $color11;
+    padding-bottom: 1rem;
+  }
+  .border-txt{
+    letter-spacing: 0.01rem;
+  }
+}
+

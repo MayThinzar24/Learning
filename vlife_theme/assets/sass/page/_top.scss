@@ -1,0 +1,570 @@
+/* ========================================================
+ styles for front page
+======================================================== */
+.load {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: $white;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1.2s;
+
+  .load-content {
+    text-align: center;
+
+    .load-logo {
+      margin: 0 auto;
+
+      @include mq(sp) {
+        max-width: 18.1rem;
+      }
+    }
+
+    .type-txt {
+      @include m-font-noto;
+      font-weight: 700;
+
+      @include mq() {
+        font-size: 3rem;
+        padding-top: 7rem;
+        letter-spacing: -0.15rem;
+      }
+
+      @include mq(sp) {
+        font-size: 2rem;
+        padding-top: 2rem;
+        line-height: 1.6;
+        letter-spacing: -0.1rem;
+      }
+    }
+  }
+}
+
+.js-type {
+  width: 100%;
+  transform: scale(0.94);
+  animation: typing 0.5s forwards;
+
+  span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(0.01rem);
+  }
+
+  span:nth-of-type(1) {
+    animation: fadein 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(2) {
+    animation: fadein 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(3) {
+    animation: fadein 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(4) {
+    animation: fadein 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(5) {
+    animation: fadein 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(6) {
+    animation: fadein 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(7) {
+    animation: fadein 0.8s 2.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(8) {
+    animation: fadein 0.8s 2.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(9) {
+    animation: fadein 0.8s 2.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(10) {
+    animation: fadein 0.8s 3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(11) {
+    animation: fadein 0.8s 3.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(12) {
+    animation: fadein 0.8s 3.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(13) {
+    animation: fadein 0.8s 3.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(14) {
+    animation: fadein 0.8s 4.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(15) {
+    animation: fadein 0.8s 4.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(16) {
+    animation: fadein 0.8s 4.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+  span:nth-of-type(17) {
+    animation: fadein 0.8s 5.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+  }
+
+}
+
+@keyframes typing {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.js-fadein {
+  opacity: 0;
+  animation: fadein 5s forwards;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mv Section */
+.sec-mv {
+  position: relative;
+
+  .mv-img-list {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0.6rem 0.6rem 3rem rgba(0, 0, 0, 0.12));
+
+    @include mq() {
+      justify-content: flex-end;
+    }
+
+    .list-img {
+      width: 33.33%;
+
+      @include mq(sp) {
+        height: 33.4rem;
+      }
+
+      @include mq() {
+        height: 72.4rem;
+        transition: all 1.5s;
+      }
+
+      &:nth-of-type(1) {
+        background: url(#{$v-img-path}top/img_mv_img01.jpg) no-repeat center/cover;
+      }
+
+      &:nth-of-type(2) {
+        background: url(#{$v-img-path}top/img_mv_img02.jpg) no-repeat center/cover;
+      }
+
+      &:nth-of-type(3) {
+        background: url(#{$v-img-path}top/img_mv_img03.jpg) no-repeat center/cover;
+      }
+
+      &.js-img {
+        @include mq() {
+          width: 22.3%;
+          height: 60.2rem;
+          animation: imagemove 2s;
+        }
+      }
+    }
+
+    @keyframes imagemove {
+      from {
+        width: 33.3%;
+        height: 72.4rem;
+      }
+
+      to {
+        width: 22.3%;
+        height: 60.2rem;
+      }
+    }
+  }
+
+  .mv-ttl {
+    @include m-font-noto;
+
+    @include mq(sp_max) {
+      font-size: 3rem;
+      padding: 3rem 1.5rem 2rem;
+      letter-spacing: 0;
+    }
+
+    @include mq(sp) {
+      font-size: 3.4rem;
+      padding: 3rem 2.3rem 2rem;
+      line-height: 1.4;
+    }
+
+    @include mq() {
+      font-size: 5.2rem;
+      position: absolute;
+      top: 19%;
+      left: 0;
+      padding-left: 10rem;
+      letter-spacing: 0.2rem;
+      line-height: 1.5;
+      z-index: 2;
+    }
+
+    .yellow-line {
+      position: relative;
+      z-index: 1;
+
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        bottom: 0.6rem;
+        background-color: $color05;
+
+        @include mq(sp) {
+          height: 1rem;
+        }
+
+        @include mq() {
+          height: 1.7rem;
+        }
+      }
+    }
+  }
+
+  .mv-txt {
+    background-image: linear-gradient(93.07deg, $color01 25.06%, $color02 99.99%);
+    position: relative;
+    z-index: -1;
+
+    @include mq(sp) {
+      padding: 2rem 2.6rem;
+    }
+
+    @include mq() {
+      padding: 3rem 10rem 20rem;
+      margin-top: -21.1rem;
+      width: 77.7%;
+    }
+
+
+    p {
+      color: $white;
+      line-height: 1.8;
+      letter-spacing: 0.07rem;
+      @include m-font-redhat;
+      font-weight: 600;
+      word-break: break-word;
+
+      @include mq(sp) {
+        font-size: 1rem;
+      }
+
+      @include mq() {
+        font-size: 1.2rem;
+        width: 25vw;
+      }
+    }
+
+  }
+}
+
+/* About Section */
+.sec-about {
+  text-align: center;
+
+  @include mq() {
+    padding: 14rem 0;
+  }
+
+  .inner {
+    background: url(#{$v-img-path}shared/img_crown_bg.png) no-repeat center/contain;
+
+    @include mq(sp) {
+      padding-top: 6.2rem;
+      padding-bottom: 6rem;
+      background-position: center top 11rem;
+    }
+
+    @include mq() {
+      padding: 7.8rem 0;
+      max-width: 73.9rem;
+    }
+  }
+
+  .desc {
+    @include m-font-notocjk;
+    font-weight: 700;
+    color: $color08;
+
+    @include mq(sp_max) {
+      font-size: 1.8rem;
+    }
+
+    @include mq(sp) {
+      font-size: 2.2rem;
+      line-height: 1.6;
+      padding-top: 2.8rem
+    }
+
+    @include mq() {
+      font-size: 3rem;
+      padding-top: 5rem;
+      line-height: 1.6;
+    }
+
+  }
+
+  .about-txt {
+    @include m-font-notocjk;
+
+    @include mq(sp) {
+      font-size: 1.4rem;
+      line-height: 2;
+      padding: 2rem 0.5rem;
+      text-align: left;
+    }
+
+    @include mq() {
+      font-size: 1.5rem;
+      color: $color08;
+      line-height: 2;
+      padding: 1.8rem 3.8rem 0;
+    }
+
+  }
+
+  .sec-btn {
+    @include mq(sp) {
+      margin-top: 0.7rem;
+    }
+
+    @include mq() {
+      margin-top: 5.7rem;
+    }
+
+  }
+}
+
+/* News Section */
+.sec-news {
+  background: url(#{$v-img-path}shared/img_crown_bg.png) no-repeat;
+
+  @include mq(sp) {
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+    padding: 6.4rem 0 7.5rem;
+  }
+
+  @include mq() {
+    background-position: bottom -6% left -7%;
+    padding: 10.4rem 0 9.5rem;
+    background-size: 48.5rem;
+  }
+
+  .news-content {
+    @include mq() {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .news-list {
+      @include mq() {
+        width: 60%;
+      }
+    }
+  }
+
+  .sec-btn {
+    @include mq(sp) {
+      margin-top: 2.7rem;
+    }
+
+    @include mq() {
+      float: right;
+      margin-top: 3.3rem;
+    }
+
+
+  }
+}
+
+
+.news-list {
+  color: $color08;
+
+  @include mq(sp) {
+    font-size: 1.4rem;
+  }
+
+  @include mq() {
+    font-size: 1.5rem;
+  }
+
+  .news-data {
+    line-height: 1.5;
+    border-bottom: 0.1rem solid $color06;
+
+    @include mq(sp) {
+      text-align: left;
+      padding: 2rem 0.5rem;
+    }
+
+    @include mq() {
+      display: flex;
+      align-items: center;
+      padding: 3rem 0.5rem;
+    }
+
+  }
+
+  .date {
+    @include mq(sp) {
+      padding-bottom: 1rem
+    }
+
+    @include m-font-redhat;
+    font-weight: 600;
+
+  }
+
+  .news-link {
+    @include m-font-notocjk;
+    font-weight: 500;
+
+    @include mq() {
+      padding-left: 1rem;
+    }
+
+  }
+}
+
+.news-ttl {
+  padding-bottom: 1rem;
+}
+
+/* Contact Section */
+.sec-contact {
+  background: url(#{$v-img-path}top/img_contact_bg.jpg) no-repeat center/cover;
+  text-align: center;
+  color: $white;
+
+  @include mq(sp) {
+    padding: 7rem 0;
+  }
+
+
+  @include mq() {
+    padding: 9rem 0;
+  }
+
+  .contact-txt {
+    @include m-font-notocjk;
+
+    @include mq(sp) {
+      padding: 2rem 0;
+      line-height: 2;
+    }
+
+    @include mq() {
+      font-size: 1.5rem;
+      padding: 3rem 0;
+    }
+  }
+
+  .btn-list {
+    @include mq() {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-btn {
+      background-color: $color08;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0.6rem;
+
+      @include mq(sp) {
+        width: 100%;
+        max-width: 32.5rem;
+        padding: 1.5rem 2rem;
+        margin: 0 auto
+      }
+
+      @include mq() {
+        width: 40.5rem;
+        padding: 2rem 2.5rem 2rem 3.5rem;
+      }
+
+      .btn-txt {
+        @include m-font-notocjk;
+        font-weight: 700;
+
+        @include mq(sp) {
+          font-size: 1.6rem;
+        }
+
+        @include mq() {
+          font-size: 1.8rem;
+        }
+      }
+
+      .btn-circle {
+        border: 0.1rem solid $white;
+
+        @include mq(sp) {
+          width: 2.8rem;
+          height: 2.8rem;
+        }
+
+        @include mq() {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+
+      }
+
+      &:first-of-type {
+
+        @include mq(sp) {
+          margin-bottom: 1rem;
+        }
+
+        @include mq() {
+          margin-right: 2rem;
+        }
+
+      }
+    }
+  }
+
+}
