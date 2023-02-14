@@ -1,0 +1,886 @@
+/* ========================================================
+ styles for page
+======================================================== */
+/* Page Title */
+.page-ttl {
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-weight: 600;
+
+  span {
+    display: block;
+  }
+
+  .first-ttl {
+    @include mq() {
+      font-size: 1.4rem;
+    }
+
+    @include mq() {
+      font-size: 1.8rem;
+    }
+
+    color: $color08;
+  }
+
+  .second-ttl {
+    @include mq(sp) {
+      font-size: 1.8rem;
+      padding-top: 0.7rem;
+    }
+
+    @include mq() {
+      font-size: 3.6rem;
+      padding-top: 1.4rem;
+    }
+
+    color: $white;
+  }
+}
+
+/* Page Mainvisual */
+.page-mv {
+  @include mq(sp) {
+    padding: 8rem 0;
+  }
+
+  @include mq() {
+    padding: 16rem 0;
+  }
+
+  &.work-mv {
+    background: url(#{$v-img-path}work/img_work_mvbg.jpg) no-repeat center/cover;
+  }
+
+  &.column-mv {
+    background: url(#{$v-img-path}column/img_column_mvbg.jpg) no-repeat center/cover;
+  }
+
+  &.error-mv {
+    background: url(#{$v-img-path}404/img_404_mvbg.jpg) no-repeat center/cover;
+  }
+
+  &.contact-mv {
+    background: url(#{$v-img-path}contact/img_contact_mvbg.jpg) no-repeat center/cover;
+  }
+
+  .inner {
+    @include mq() {
+      padding: 0 3rem;
+    }
+  }
+}
+
+/* Works List */
+.work-content {
+  .inner {
+    @include mq() {
+      padding: 0 15rem;
+    }
+  }
+
+  .work-list {
+    margin: 0 auto;
+
+    @include mq(sp) {
+      padding-top: 4rem;
+      width: 94%;
+    }
+
+    @include mq() {
+      padding-top: 10rem;
+    }
+
+  }
+
+  .work-img {
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include mq(sp) {
+      width: 15rem;
+      height: 15rem;
+      margin: 0 auto;
+    }
+
+    @include mq() {
+      width: 35.7rem;
+      height: 35.7rem;
+    }
+
+  }
+
+  .work {
+    border: 0.1rem solid $color02;
+
+    @include mq(sp) {
+      padding: 3rem 2rem;
+    }
+
+    @include mq() {
+      padding: 6rem;
+    }
+
+    a {
+      @include mq() {
+        display: flex;
+      }
+    }
+
+    &:not(:last-child) {
+      @include mq() {
+        margin-bottom: 5rem;
+      }
+
+      @include mq(sp) {
+        margin-bottom: 2.5rem;
+      }
+
+    }
+
+  }
+
+  .work-ttl {
+
+    @include mq(sp) {
+      padding: 2rem 0 1.8rem;
+      letter-spacing: 0.06rem;
+      text-align: center;
+    }
+
+    @include mq() {
+      padding-bottom: 3rem;
+    }
+  }
+
+  .work-desc {
+    @include mq(sp) {
+      padding-bottom: 1.3rem;
+    }
+
+    @include mq() {
+      padding-bottom: 4rem;
+    }
+  }
+
+  .badge-list {
+    line-height: 1.5;
+
+    @include mq(sp) {
+      padding-top: 2rem;
+    }
+
+    @include mq() {
+      padding: 2rem 0;
+    }
+  }
+
+  .work-txt {
+    @include mq() {
+      margin-left: 8%;
+      width: 50%;
+    }
+
+  }
+}
+
+.work {
+  background-color: $white;
+  border-radius: 1.5rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  @include mq(sp) {
+    padding: 3rem 2rem;
+  }
+
+  @include mq() {
+    padding: 0 25rem;
+  }
+
+  &:not(:last-child) {
+    @include mq() {
+      margin-bottom: 5rem;
+    }
+
+    @include mq(sp) {
+      margin-bottom: 2.5rem;
+    }
+
+  }
+
+  .tag-list {
+    justify-content: flex-end;
+  }
+}
+
+.work-img {
+
+  @include mq(sp) {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto;
+  }
+
+  @include mq() {
+    width: 100%;
+    height: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.work-ttl {
+  color: $color02;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: break-word;
+
+  @include mq(sp) {
+    font-size: 1.5rem;
+  }
+
+  @include mq() {
+    font-size: 2.3rem;
+  }
+}
+
+.work-desc {
+  font-weight: 500;
+  line-height: 2;
+
+  @include mq(sp) {
+    font-size: 1.3rem;
+  }
+
+  @include mq() {
+    font-size: 1.6rem;
+  }
+}
+
+.badge-list {
+  line-height: 1.5;
+  font-weight: 500;
+
+  @include mq(sp) {
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+  }
+
+  @include mq() {
+    padding: 2rem 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  .badge-type {
+    border: 0.1rem solid $color03;
+    color: $color03;
+    border-radius: 3rem;
+    text-align: center;
+
+    @include mq(sp) {
+      width: 10.6rem;
+      padding: 0.2rem 0;
+    }
+
+    @include mq() {
+      width: 8.7rem;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .badge-txt {
+    @include mq(sp) {
+      padding-left: 5%;
+      width: 60%;
+    }
+
+    @include mq() {
+      padding-left: 2rem;
+    }
+
+  }
+}
+
+/* Single Work */
+.single {
+  @include mq(sp) {
+    padding: 5rem 0;
+  }
+
+  @include mq() {
+    padding: 10rem 0;
+  }
+
+  .work {
+
+    .work-ttl,
+    .work-desc {
+      text-align: center;
+    }
+
+    .work-ttl {
+      @include mq(sp) {
+        padding: 2rem 0;
+      }
+
+      @include mq() {
+        padding: 4.5rem 0 3.5rem;
+      }
+    }
+  }
+
+  .badge-list {
+    border: 0.1rem solid $color03;
+
+    @include mq(sp) {
+      max-width: 51.9rem;
+      margin: 2rem auto 0;
+      padding: 2rem;
+    }
+
+    @include mq() {
+      max-width: 51.9rem;
+      margin: 3rem auto 0;
+      padding: 4rem;
+    }
+  }
+
+  .task {
+    line-height: 1.5;
+
+    @include mq(sp) {
+      margin-top: 3rem;
+    }
+
+    @include mq() {
+      margin-top: 6rem;
+    }
+
+    li {
+      &:not(:last-child) {
+        @include mq(sp) {
+          margin-bottom: 2rem;
+        }
+
+        @include mq() {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    .task-ttl {
+      font-weight: 600;
+      color: $color02;
+      position: relative;
+      display: block;
+
+      @include mq(sp) {
+        font-size: 1.6rem;
+        padding-left: 4rem;
+        margin-bottom: 2rem;
+      }
+
+      @include mq() {
+        font-size: 2rem;
+        padding-left: 6.5rem;
+        margin-bottom: 3rem;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        border-bottom: 0.1rem solid $color02;
+
+        @include mq(sp) {
+          width: 2.5rem;
+        }
+
+        @include mq() {
+          width: 4.5rem;
+        }
+      }
+    }
+
+    .task-desc {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 1rem;
+
+      @include mq(sp) {
+        font-size: 1.4rem;
+      }
+
+      @include mq() {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .cat-btn {
+    a {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+/* Column*/
+
+.col {
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .col-img {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .col-ttl {
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.5;
+    color: $color02;
+
+  }
+
+  .col-desc {
+    line-height: 2;
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+  }
+}
+
+/* Single Column */
+.single-col {
+  &.col {
+
+    @include mq() {
+      padding: 0 25rem;
+    }
+
+    .col-ttl {
+      text-align: center;
+
+      @include mq(sp) {
+        font-size: 1.5rem;
+        margin: 1.6rem 0;
+      }
+
+      @include mq() {
+        font-size: 2.5rem;
+        padding: 2.2rem 0;
+      }
+    }
+
+    .col-desc {
+      margin-bottom: 3rem;
+
+      @include mq(sp) {
+        font-size: 1.4rem;
+      }
+
+      @include mq() {
+        font-size: 1.6rem;
+      }
+    }
+
+    .cat-name {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+  }
+}
+
+/* Column List */
+.content {
+  .col-list {
+    @include mq(sp) {
+      padding: 5rem 0;
+    }
+
+    @include mq() {
+      padding: 10rem 3rem 0;
+    }
+
+    .post-content {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* Tag List */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    &:not(:last-child) {
+      a {
+        &::after {
+          content: ',';
+        }
+      }
+    }
+  }
+
+  a {
+    @include mq(sp) {
+      font-size: 1.6rem;
+    }
+
+    @include mq() {
+      font-size: 2rem;
+    }
+
+    color: $color04 !important;
+
+    &::before {
+      content: '#';
+    }
+
+  }
+}
+
+/* Tab List */
+.tab-wrap {
+  background-color: $color07;
+
+  .tab-list {
+    @include mq() {
+      display: flex;
+      align-items: center;
+      max-width: 140rem;
+      margin: 0 auto;
+    }
+
+    .tab {
+      @include mq() {
+        width: 25%;
+      }
+
+      text-align: center;
+    }
+
+    .tab-link,
+    a {
+      color: $color04 !important;
+      font-weight: 600;
+      display: inline-block;
+      width: 100%;
+      position: relative;
+      text-decoration: none;
+
+      @include mq(sp) {
+        padding: 2rem 0;
+        padding: 1.5rem 0;
+      }
+
+      @include mq() {
+        padding: 2.3rem 0 5rem;
+        font-size: 2rem;
+      }
+
+      &.js-active,
+      &:hover {
+        background-color: $color04;
+        color: $white !important;
+
+        &::after {
+          border-color: $color08;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        transform: translateY(-50%) rotate(45deg);
+        transition: all 0.2s ease-in-out;
+        border-right: 0.2rem solid $color09;
+        border-bottom: 0.2rem solid $color09;
+
+        @include mq(sp) {
+          top: 50%;
+          right: 8%;
+          width: 0.5rem;
+          height: 0.5rem;
+        }
+
+        @include mq() {
+          width: 1rem;
+          height: 1rem;
+          bottom: 25%;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-weight: 700;
+  color: $color02;
+
+  @include mq(sp) {
+    font-size: 3.5rem;
+    padding-top: 3rem;
+  }
+
+  @include mq() {
+    font-size: 5rem;
+    padding-top: 5rem;
+  }
+}
+
+/* Contact */
+.form-content {
+  word-break: break-word;
+
+  @include mq(sp) {
+
+    padding: 5rem 1.5rem 0;
+  }
+
+  @include mq() {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 10rem 3.5rem 0;
+
+  }
+
+  .contact-info {
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+
+    .tel {
+      display: inline-block;
+    }
+
+    @include mq(sp) {
+      font-size: 1.4rem;
+      padding-bottom: 5rem;
+
+    }
+
+    @include mq() {
+      font-size: 1.6rem;
+      padding-bottom: 10rem;
+    }
+  }
+
+  .form-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq(sp) {
+      margin-bottom: 3rem;
+    }
+
+    @include mq() {
+      margin-bottom: 6rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+      width: 40%;
+
+      @include mq(sp) {
+        font-size: 1.4rem;
+      }
+
+      @include mq() {
+        font-size: 1.6rem;
+      }
+    }
+
+    .wpcf7-form-control-wrap {
+      width: 60%;
+
+      .form-input {
+        width: 100%;
+        border: 0.1rem solid $color01;
+        outline: none;
+        font-weight: 500;
+        line-height: 1.6;
+
+        @include mq(sp) {
+          font-size: 1.4rem;
+          padding: 0.2rem 0.5rem;
+        }
+
+        @include mq() {
+          font-size: 1.6rem;
+          padding: 0.2rem 1rem;
+        }
+      }
+
+      textarea {
+        resize: none;
+      }
+    }
+
+
+  }
+
+  .required {
+    color: $color03;
+    display: inline-block;
+
+    @include mq(sp) {
+      font-size: 1.2rem;
+      padding-left: 0.5rem;
+
+    }
+
+    @include mq() {
+      font-size: 1.4rem;
+      padding-left: 1rem;
+    }
+  }
+
+  .info-box {
+    border: 0.1rem solid $color01;
+
+    @include mq(sp) {
+      padding: 2rem;
+    }
+
+    @include mq() {
+      padding: 6rem 4rem;
+    }
+
+    .box-ttl {
+      font-weight: 600;
+      color: $color02;
+      line-height: 1.6;
+      text-align: center;
+      padding-bottom: 4.6rem;
+    }
+
+    .box-txt {
+      font-weight: 500;
+      line-height: 1.6;
+
+      @include mq(sp) {
+        font-size: 1.2rem;
+      }
+
+      @include mq() {
+        font-size: 1.4rem;
+      }
+    }
+
+    .info-ttl {
+      font-weight: 600;
+      line-height: 1.5;
+
+      @include mq(sp) {
+        font-size: 1.5rem;
+        padding: 2rem 0;
+      }
+
+      @include mq() {
+        font-size: 1.7rem;
+        padding: 4rem 0 2rem;
+      }
+    }
+  }
+
+  .chk-blk {
+    text-align: center;
+
+    @include mq(sp) {
+      padding: 2.5rem 0;
+    }
+
+    @include mq() {
+      padding: 3.7rem 0 5.7rem;
+    }
+
+    .wpcf7-list-item-label {
+      font-weight: 500;
+
+      @include mq(sp) {
+        font-size: 1.4rem;
+      }
+
+      @include mq() {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .form-btn {
+    font-weight: 600;
+    color: $white;
+    background-color: $color03;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    border: none;
+    border-radius: 3rem;
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+    }
+
+    @include mq(sp) {
+      padding: 1.2rem 3.5rem;
+      font-size: 1.4rem;
+    }
+
+    @include mq() {
+      padding: 1.4rem 5.3rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+/* Related Post */
+.related-post {
+  .cat-name {
+    margin-top: 3rem;
+  }
+}

@@ -1,0 +1,63 @@
+/* ========================================================
+footer
+======================================================== */
+.footer{
+	.ft-logo{
+		@include mq(sp){
+			padding: 3.7rem 0;
+		}
+		@include mq(){
+			padding: 6.7rem 0;
+		}
+		.logo{
+			display: block;
+			margin: 0 auto;		
+			max-width: 12.2rem;
+		}
+	}
+	.ft-base{
+		background-color: $color02;
+		font-weight: 500;
+		color: $white;
+		line-height: 1.5;
+		@include mq(sp){
+			font-size: 1.1rem;
+			padding: 1.5rem 0;
+		}
+		@include mq(){
+			font-size: 1.4rem;
+			padding: 2rem 0;
+		}
+		.inner{
+			@include mq(){
+				padding:  0 3rem;
+			}
+		}
+		.menu-list{
+			@include mq(){
+				float: left;
+			}
+			
+			li{
+				text-transform: uppercase;
+				@include mq(){
+					float: left;
+				}
+				&:not(:last-child){
+					margin-right: 3rem;
+				}
+				.menu-link{
+					color: $white;
+				}
+			}
+		}
+		.copy-right{
+			@include mq(sp){
+				text-align: center;
+			}
+			@include mq(){
+				float: right;
+			}			
+		}
+	}
+}

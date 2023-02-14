@@ -1,0 +1,123 @@
+/* ========================================================
+ common parts styles
+======================================================== */
+
+/* Clearfix */
+.clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+/* Common Button */
+.cmn-btn {
+  text-align: center;
+  color: $white;
+  font-weight: 600;
+  display: inline-block;
+  border-radius: 3rem;
+  line-height: 1.2;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.btn-blue {
+    background-color: $color02;
+  }
+
+  &.btn-red {
+    background-color: $color03;
+  }
+
+  span {
+    position: relative;
+    display: inline-block;
+    padding-left: 2.5rem;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      content: '';
+    }
+  }
+}
+
+/* View More Button */ 
+.viewmore-btn{
+  @include mq(sp){
+    padding: 1.1rem 0;
+    width: 16rem;
+  }
+  @include mq(){
+    padding: 1.4rem 0;
+    width: 18.4rem;
+  }
+}
+
+/* Category Button */ 
+.cat-btn{
+  a{
+    font-weight: 500;
+    border-radius: 3rem;
+    color: $color02 !important;
+    border: 0.1rem solid $color02;
+    text-align: center;
+    display: block;
+    background-color: $color06;
+    text-transform: capitalize;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    @include mq(sp){
+      font-size: 1.4rem;
+      padding: 0.5rem 0;
+      width: 12.5rem;
+    }
+    @include mq(){
+      font-size: 1.3rem;
+      width: 13.2rem;
+      padding: 0.6rem 0;
+      width: 13.2rem;
+    }
+  }
+}
+
+
+/* Red Text */
+
+.red-txt {
+  color: $color03;
+}
+
+.sec-ttl{
+  line-height: 1.5;
+  font-weight: 600;
+  text-transform: uppercase;
+  span{
+    display: block;
+  }
+  .red-ttl{
+    color: $color03;
+    @include mq(sp){
+      font-size: 1.4rem;
+    }
+    @include mq(){
+      font-size: 1.6rem;
+    }
+  }
+  .blue-ttl{
+    color: $color02;
+    @include mq(sp){
+      font-size: 2.7rem;
+      padding-top: 0.5rem;
+    }
+    @include mq(){
+      font-size: 3.2rem;
+      padding-top: 1rem;
+    }
+  }
+}
